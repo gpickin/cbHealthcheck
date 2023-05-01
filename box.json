@@ -1,29 +1,33 @@
 {
-  "name": "cbHealthcheck",
-  "version": "1.0.0",
-  "author": "Gavin Pickin",
-  "location": "forgeboxStorage",
-  "homepage": "https://github.com/gpickin/cbHealthcheck",
-  "documentation": "https://github.com/gpickin/cbHealthcheck",
-  "repository": {
-    "type": "git",
-    "URL": "https://github.com/gpickin/cbHealthcheck"
-  },
-  "bugs": "https://github.com/gpickin/cbHealthcheck/issues",
-  "slug": "cbHealthcheck",
-  "shortDescription": "A ColdBox Module to give your app a healthcheck endpoint with multiple checks and logging and failing if required.",
-  "description": "A ColdBox Module to give your app a healthcheck endpoint with multiple checks and logging and failing if required.",
-  "type": "modules",
-  "devDependencies": {},
-  "installPaths": {},
-  "scripts": {
-    "format": "cfformat run models/**/*.cfc,tests/specs/**/*.cfc --overwrite",
-    "format:check": "cfformat check models/**/*.cfc,tests/specs/**/*.cfc",
-    "onRelease": "publish",
-    "postPublish": "!git push && git push --tags"
-  },
-  "ignore": ["**/.*", "test", "tests"],
-  "testbox": {
-    "runner": "http://127.0.0.1:51234/tests/runner.cfm"
-  }
+    "name":"cbHealthcheck",
+    "version":"1.1.0",
+    "author":"Gavin Pickin",
+    "location":"forgeboxStorage",
+    "homepage":"https://github.com/gpickin/cbHealthcheck",
+    "documentation":"https://github.com/gpickin/cbHealthcheck",
+    "repository":{
+        "type":"git",
+        "URL":"https://github.com/gpickin/cbHealthcheck"
+    },
+    "bugs":"https://github.com/gpickin/cbHealthcheck/issues",
+    "slug":"cbHealthcheck",
+    "shortDescription":"A ColdBox Module to give your app a healthcheck endpoint with multiple checks and logging and failing if required.",
+    "description":"A ColdBox Module to give your app a healthcheck endpoint with multiple checks and logging and failing if required.",
+    "type":"modules",
+    "devDependencies":{},
+    "installPaths":{},
+    "scripts":{
+        "format":"cfformat run models/**/*.cfc,tests/specs/**/*.cfc --overwrite",
+        "format:check":"cfformat check models/**/*.cfc,tests/specs/**/*.cfc",
+        "onRelease":"publish",
+        "postPublish":"!git push && git push --tags"
+    },
+    "ignore":[
+        "**/.*",
+        "test",
+        "tests"
+    ],
+    "testbox":{
+        "runner":"http://127.0.0.1:51234/tests/runner.cfm"
+    }
 }
