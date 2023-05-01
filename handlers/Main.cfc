@@ -3,7 +3,7 @@
  */
 component {
 
-	property name="settings" inject="coldbox:modulesettings:_healthcheck";
+	property name="settings" inject="coldbox:modulesettings:cbHealthcheck";
 
 	/**
 	 * index
