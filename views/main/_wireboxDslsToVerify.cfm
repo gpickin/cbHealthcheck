@@ -39,8 +39,8 @@
 					<cfset prc.results[ "services" ][ "errors" ] = prc.results[ "services" ][ "errors" ] + 1>
 					<cfset prc.results[ "services" ][ "data" ][ listFirst( service.dsl, "@") ] = { "error": "Error creating Service: #service.dsl# - #cfcatch.message#" }>
 					<cfif rc.loggerEnabled><cfset prc.logger[ prc.settings.loggerMethod ](
-						prc.settings.loggerExtraInfoKey = cfcatch,
-						prc.settings.loggerMessageKey = "#prc.settings.appName# - #controller.getSetting( "environment" )# - #server.os.hostname# - HealthCheck Error: Error creating Service #service.dsl# - #cfcatch.message#"
+						"#prc.settings.loggerExtraInfoKey#" = cfcatch,
+						"#prc.settings.loggerMessageKey#" = "#prc.settings.appName# - #controller.getSetting( "environment" )# - #server.os.hostname# - HealthCheck Error: Error creating Service #service.dsl# - #cfcatch.message#"
 					)></cfif>
 				</cfcatch>
 			</cftry>

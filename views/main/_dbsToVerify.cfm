@@ -18,8 +18,8 @@
 							<cfset prc.results[ "dbs" ][ "data" ][ #db.datasource# ] = { "error": "#db.datasource# - Error Communicating with DB: #cfcatch.message#" }>
 	
 							<cfif rc.loggerEnabled><cfset prc.logger[ prc.settings.loggerMethod ](
-								prc.settings.loggerExtraInfoKey = cfcatch,
-								prc.settings.loggerMessageKey = "#prc.settings.appName# - #controller.getSetting( "environment" )# - #server.os.hostname# - HealthCheck warning: Error connecting with #db.datasource# Datasource - required by #dbg.group_name#"
+								"#prc.settings.loggerExtraInfoKey#" = cfcatch,
+								"#prc.settings.loggerMessageKey#" = "#prc.settings.appName# - #controller.getSetting( "environment" )# - #server.os.hostname# - HealthCheck warning: Error connecting with #db.datasource# Datasource - required by #dbg.group_name#"
 							)></cfif>
 						</cfcatch>
 					</cftry>

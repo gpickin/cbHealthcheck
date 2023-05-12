@@ -16,8 +16,8 @@
 				<cfset prc.results[ "couchbase_servers" ][ "errors" ] = prc.results[ "couchbase_servers" ][ "errors" ] + 1>
 				<cfset prc.results[ "couchbase_servers" ][ "data" ][ couchBase ] = { "error": "CouchBase Server: #couchBase# - Connection Failed: #result.statuscode# - #result?.errordetail#" }>
 				<cfif rc.loggerEnabled><cfset prc.logger[ prc.settings.loggerMethod ](
-					prc.settings.loggerExtraInfoKey = result,
-					prc.settings.loggerMessageKey = "#prc.settings.appName# - #controller.getSetting( "environment" )# - #server.os.hostname# - HealthCheck warning: Error Connecting to Couchbase Server: #couchBase# - #result.statuscode# #result?.errordetail# - File Content #result.fileContent#"
+					"#prc.settings.loggerExtraInfoKey#" = result,
+					"#prc.settings.loggerMessageKey#" = "#prc.settings.appName# - #controller.getSetting( "environment" )# - #server.os.hostname# - HealthCheck warning: Error Connecting to Couchbase Server: #couchBase# - #result.statuscode# #result?.errordetail# - File Content #result.fileContent#"
 				)></cfif>
 			</cfif>
 		</cfloop>

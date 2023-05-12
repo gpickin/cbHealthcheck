@@ -22,8 +22,8 @@
 					<cfset prc.results[ "caches" ][ "errors" ] = prc.results[ "caches" ][ "errors" ] + 1>
 					<cfset prc.results[ "caches" ][ "data" ][ cacheItem.cacheName ] = { "error": "Error Communicating</b> with Cache: #cfcatch.message#" }>
 					<cfif rc.loggerEnabled><cfset prc.logger[ prc.settings.loggerMethod ](
-						prc.settings.loggerExtraInfoKey = cfcatch,
-						prc.settings.loggerMessageKey = "#prc.settings.appName# - #controller.getSetting( "environment" )# - #server.os.hostname# - HealthCheck warning: Error communicating with #cacheItem.cacheName# cache"
+						"#prc.settings.loggerExtraInfoKey#" = cfcatch,
+						"#prc.settings.loggerMessageKey#" = "#prc.settings.appName# - #controller.getSetting( "environment" )# - #server.os.hostname# - HealthCheck warning: Error communicating with #cacheItem.cacheName# cache"
 					)></cfif>
 				</cfcatch>
 			</cftry>
