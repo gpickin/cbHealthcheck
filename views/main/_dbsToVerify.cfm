@@ -6,6 +6,9 @@
 		<li><h4>DB Connections by #dbg.group_name#:</h4>
 		<ul>
 			<cfloop array="#dbg.datasources#" item="db">
+				<cfif isClosure( db.datasource )>
+					<cfset db.datasource = db.datasource()>
+				</cfif>
 				<li>
 					<cftry>
 						<cfquery name="prc.#db.datasource#" datasource="#db.datasource#" timeout="5">
