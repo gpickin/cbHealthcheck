@@ -43,7 +43,8 @@ component {
             couchBaseServersToCheck: [],
             dbs: [ { "group_name": "Main Application", "datasources": [] } ],
             wireboxDslsToVerify: [],
-            externalSites: []
+            externalSites: [],
+            timersEnabled: getSystemSetting( "CBHEALTHCHECK_TIMERS_ENABLED", false )
         };
 
         // Layout Settings

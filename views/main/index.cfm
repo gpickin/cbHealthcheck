@@ -1,15 +1,45 @@
 <cfoutput>
 	<h1>#prc.settings.appName# Healthcheck page</h1>
 
-	<cfinclude template="_cachesToVerify.cfm">
+	<cfif prc.settings.timersEnabled>
+		<cftimer type="outline" label="Caches">
+			<cfinclude template="_cachesToVerify.cfm">
+		</cftimer>
+	<cfelse>
+		<cfinclude template="_cachesToVerify.cfm">
+	</cfif>
 
-	<cfinclude template="_couchbaseServersToVerify.cfm">
+	<cfif prc.settings.timersEnabled>
+		<cftimer type="outline" label="CouchBase Servers">
+			<cfinclude template="_couchbaseServersToVerify.cfm">
+		</cftimer>
+	<cfelse>
+		<cfinclude template="_couchbaseServersToVerify.cfm">
+	</cfif>
 
-	<cfinclude template="_dbsToVerify.cfm">
+	<cfif prc.settings.timersEnabled>
+		<cftimer type="outline" label="Database Connections">
+			<cfinclude template="_dbsToVerify.cfm">
+		</cftimer>
+	<cfelse>
+		<cfinclude template="_dbsToVerify.cfm">
+	</cfif>
 
-	<cfinclude template="_wireboxDslsToVerify.cfm">
+	<cfif prc.settings.timersEnabled>
+		<cftimer type="outline" label="WireBox DSLs">
+			<cfinclude template="_wireboxDslsToVerify.cfm">
+		</cftimer>
+	<cfelse>
+		<cfinclude template="_wireboxDslsToVerify.cfm">
+	</cfif>
 
-	<cfinclude template="_externalSites.cfm">
+	<cfif prc.settings.timersEnabled>
+		<cftimer type="outline" label="External Sites">
+			<cfinclude template="_externalSites.cfm">
+		</cftimer>
+	<cfelse>
+		<cfinclude template="_externalSites.cfm">
+	</cfif>
 
 	<cfparam name="prc.settings.throwOnCachesErrors" default="false">
 	<cfparam name="prc.settings.throwOnCouchbaseServersErrors" default="false">
