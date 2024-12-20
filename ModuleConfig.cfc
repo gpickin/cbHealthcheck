@@ -44,7 +44,7 @@ component {
             dbs: [ { "group_name": "Main Application", "datasources": [] } ],
             wireboxDslsToVerify: [],
             externalSites: [],
-            timersEnabled: false
+            timersEnabled: getSystemSetting( "CBHEALTHCHECK_TIMERS_ENABLED", false )
         };
 
         // Layout Settings
